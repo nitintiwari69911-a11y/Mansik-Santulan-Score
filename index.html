@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aequus — Your Digital Balance Score</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- UPDATED HEADER WITH EXACT TEXT FROM IMAGE 1 -->
+<header class="site-head">
+  <div class="category-badge">
+    <span>STUDENT WELLNESS ANALYTICS</span>
+  </div>
+  <h1 class="main-title">
+    Mental Health <span class="italic-highlight">Signal</span>
+  </h1>
+  <p class="tagline">
+    A quick read on how habits, screen time, and stress are trending — modeled from your daily rhythm, not a diagnosis.
+  </p>
+</header>
+
+<main class="layout">
+
+  <!-- FORM PANEL -->
+  <section class="panel form-panel">
+    <form id="predict-form">
+
+      <div class="group">
+        <p class="group-label"><span class="group-index">01</span> About you</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="10" max="100" placeholder="20" required>
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Choose</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Choose</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="UK">UK</option>
+              <option value="Germany">Germany</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Turkey">Turkey</option>
+              <option value="France">France</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="academic_level">Academic level</label>
+            <select id="academic_level" name="academic_level" required>
+              <option value="" disabled selected>Choose</option>
+              <option value="High School">High School</option>
+              <option value="Undergraduate">Undergraduate</option>
+              <option value="Graduate">Graduate</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="group-label"><span class="group-index">02</span> Digital life</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="most_used_platform">Most used platform</label>
+            <select id="most_used_platform" name="most_used_platform" required>
+              <option value="" disabled selected>Choose</option>
+              <option>Facebook</option>
+              <option>LinkedIn</option>
+              <option>Instagram</option>
+              <option>Snapchat</option>
+              <option>Twitter</option>
+              <option>YouTube</option>
+              <option>TikTok</option>
+              <option>LINE</option>
+              <option>KakaoTalk</option>
+              <option>VKontakte</option>
+              <option>WhatsApp</option>
+              <option>WeChat</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="purpose_of_use">Main purpose</label>
+            <select id="purpose_of_use" name="purpose_of_use" required>
+              <option value="" disabled selected>Choose</option>
+              <option>Networking</option>
+              <option>Education</option>
+              <option>Entertainment</option>
+              <option>News</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="avg_daily_usage_hours">Avg. daily usage <span class="unit">hrs</span></label>
+            <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" placeholder="4.5" required>
+          </div>
+          <div class="field">
+            <label for="daily_unlocks">Daily phone unlocks</label>
+            <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" placeholder="60" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="group-label"><span class="group-index">03</span> Wellbeing</p>
+        <div class="field-row three">
+          <div class="field">
+            <label for="study_hours">Study <span class="unit">hrs</span></label>
+            <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="3" required>
+          </div>
+          <div class="field">
+            <label for="physical_activity_hours">Activity <span class="unit">hrs</span></label>
+            <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" placeholder="1" required>
+          </div>
+          <div class="field">
+            <label for="sleep_hours_per_night">Sleep <span class="unit">hrs</span></label>
+            <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="7" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="stress_level">Stress level</label>
+          <select id="stress_level" name="stress_level" required>
+            <option value="" disabled selected>Choose</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn" class="submit-btn">
+        <span class="btn-label">Read my balance</span>
+      </button>
+      <p id="form-error" class="form-error" hidden></p>
+    </form>
+  </section>
+
+  <!-- RESULT PANEL -->
+  <section class="panel result-panel">
+    <div class="result-stack">
+
+      <!-- Section 1: Idle Header & Info -->
+      <div id="state-idle" class="state-block">
+        <div class="idle-glyph" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="idle-rings">
+            <circle cx="100" cy="100" r="90" class="ring ring-1"/>
+            <circle cx="100" cy="100" r="65" class="ring ring-2"/>
+            <circle cx="100" cy="100" r="40" class="ring ring-3"/>
+          </svg>
+        </div>
+        <div class="text-group">
+          <h3 class="panel-section-title">Your score will appear here</h3>
+          <p class="idle-text">Fill in the form and submit to generate a predicted score from 0-10.</p>
+        </div>
+      </div>
+
+      <!-- Section 2: Loading Status Indicator -->
+      <div id="state-loading" class="state-block">
+        <div class="breathe-wrap" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="breathe-rings">
+            <circle cx="100" cy="100" r="30" class="breathe breathe-a"/>
+            <circle cx="100" cy="100" r="30" class="breathe breathe-b"/>
+            <circle cx="100" cy="100" r="30" class="breathe breathe-c"/>
+          </svg>
+        </div>
+        <div class="text-group">
+          <h4 class="status-heading">Reading the signal...</h4>
+          <p class="loading-text">Running your habits through the model<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+        </div>
+      </div>
+
+      <!-- Section 3: Score & Dial Gauge Block -->
+      <div id="state-result" class="state-block">
+        <div class="gauge-wrap">
+          <svg viewBox="0 0 240 140" class="gauge">
+            <path d="M 20 130 A 100 100 0 0 1 220 130" class="gauge-track"/>
+            <path id="gauge-fill" d="M 20 130 A 100 100 0 0 1 220 130" class="gauge-fill"/>
+            <circle id="gauge-needle" cx="20" cy="130" r="6" class="gauge-needle"/>
+          </svg>
+          <div class="gauge-readout">
+            <span id="score-value" class="score-value">0.0</span>
+            <span class="score-max">/10</span>
+          </div>
+        </div>
+
+        <p id="result-label" class="result-label">—</p>
+        <p id="result-copy" class="result-copy">—</p>
+
+        <button type="button" id="reset-btn" class="reset-btn">Check another profile</button>
+      </div>
+
+      <!-- Error State Block -->
+      <div id="state-error" class="state-block" hidden>
+        <p class="error-glyph">⚠</p>
+        <p class="error-title">The reading didn't come through</p>
+        <p id="error-copy" class="error-copy">Couldn't reach the prediction server.</p>
+        <button type="button" id="retry-btn" class="reset-btn">Try again</button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p>Predictions are estimates from a statistical model, not a clinical assessment.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
