@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "https://mansik-santulan-score-5piy.onrender.com";
 const SCALE_MAX = 10; 
 
 const form = document.getElementById("predict-form");
@@ -123,7 +123,8 @@ async function submitForm(e) {
   gaugeNeedleEl.style.transition = "";
 
   try {
-    const res = await fetch(API_URL, {
+    // ✅ FIX: Endpoint /predict yahan add kar diya gaya hai
+    const res = await fetch(`${API_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -151,9 +152,10 @@ async function submitForm(e) {
     animateGauge(score);
     showState("result");
   } catch (err) {
+    // ✅ FIX: Production environment ke hisab se error text update kar diya hai
     errorCopyEl.textContent =
       err instanceof TypeError
-        ? "Couldn't reach the prediction server. Make sure the FastAPI backend is running on 127.0.0.1:8000."
+        ? "Couldn't reach the prediction server. Please check your network connection or try again later."
         : err.message || "Something went wrong while reading your score.";
     showState("error");
   } finally {
